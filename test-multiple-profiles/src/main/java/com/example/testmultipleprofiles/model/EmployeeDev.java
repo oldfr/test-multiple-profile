@@ -4,11 +4,14 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
-@Profile({"e1"})
+/*@Profile({"e1"})
 @Configuration
-@EnableConfigurationProperties
+@EnableConfigurationProperties*/
+@Component
+@PropertySource("classpath:application-e1.properties")
 @ConfigurationProperties(prefix = "e1") //, locations = {"classpath:application-wmx.properties", "classpath:myapp-env.properties"})
 public class EmployeeDev {
 
